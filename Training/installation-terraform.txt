@@ -1,0 +1,22 @@
+## Installation of Terraform and Azure CLI in RHEL or Centos Linux machine 
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum -y install terraform
+terraform -v
+
+## for Installation of Azure CLI 
+## copy the entire code and paste and enter in linux machine 
+
+echo -e "[azure-cli]
+name=Azure CLI
+baseurl=https://packages.microsoft.com/yumrepos/azure-cli
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/azure-cli.repo
+
+# after that install azure cli package 
+
+yum install azure-cli -y
+az login or az login with device code 
+
